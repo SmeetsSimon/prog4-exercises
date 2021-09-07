@@ -7,27 +7,35 @@ def oppervlakte_kegel(r, h):
     # Zoek via Google naar "area cone"
     # l = vierkantswortel(r^2 + h^2)
     # A = π * r * l + π * r^2
-    return 0
+    l = sqrt(r**2 + h**2)
+    A = pi * r * l + pi * r**2
+    return A
 
 
 def last_element(l):
     """Return het laatste element uit een lijst"""
-    return 0
+ 
+    b = l[-1]
+    return b  
 
 
 def sum_of_list(l):
     """Return de som van alle elementen uit een lijst"""
-    return 11
+    b = sum(l)
+    return b
 
 
 def average_of_list(l):
     """Return het gemiddelde van alle elementen uit een lijst"""
-    return 0
+    result = sum(l) / len(l)
+    return result
 
 
 def min_max_of_list(l):
     """Return het minimum en het maximum van de elementen uit een lijst"""
-    return 0
+    minimum = min(l)
+    maximum = max(l)
+    return minimum, maximum
 
 
 def squared_list(l):
@@ -35,12 +43,18 @@ def squared_list(l):
 
     squared_list([2,3]) == [4, 9]
     """
-    return []
+    result = [i**2 for i in l]
+    return result 
+    
 
 
 def differences_list(l1, l2):
-    return []
+    a = []
+    for i in zip(l1, l2):
+        a.append(i[0]-i[1])
+    return a
 
 
 def replace_takis_mr_issaris(text):
-    return ""
+    result = text.replace("Takis", "Mr. Issaris")
+    return result 
