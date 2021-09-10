@@ -3,7 +3,8 @@
 
 def list_search(l, value):
     """Return the index of the value in the list"""
-    return 0
+    
+    return l.index(value)
 
 
 def phonebook_search(phonebook, search_name):
@@ -14,7 +15,10 @@ def phonebook_search(phonebook, search_name):
     phonebook: een list van lists met hierin naam, telefoonnummer paren
     search_name: de naam van de te zoeken persoon
     """
-    return 0
+    for i, j in phonebook:
+        if i == search_name:
+            return j 
+    return None
 
 
 def phonebook_add(phonebook, name, number):
@@ -27,6 +31,15 @@ def phonebook_add(phonebook, name, number):
     staat, voeg het dan niet toe, maar toon "ander persoon met deze nummer
     in telefoonboek" op het scherm.
     """
+    phonebook = []
+    for a, b , c in phonebook:
+        phonebook.append(b,c)
+    
+        
+
+
+
+
     print("not implemented")
 
 
