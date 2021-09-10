@@ -1,5 +1,7 @@
 # We gaan nu een adresboek opstellen met behulp van
-# een list van dictionaries.
+# een enkele dictionary.
+# Deze datastructuur maakt het implementeren van
+# onderstaande functies eenvoudiger en efficienter.
 
 
 def addressbook_search(addressbook, search_name):
@@ -10,7 +12,7 @@ def addressbook_search(addressbook, search_name):
     addressbook: een list van lists met hierin naam, adres paren
     search_name: de naam van de te zoeken persoon
     """
-    return None
+
 
 
 def addressbook_add(addressbook, name, address):
@@ -20,4 +22,4 @@ def addressbook_add(addressbook, name, address):
     voeg het dan niet toe, maar toon "persoon reeds in adresboek"
     op het scherm.
     """
-    
+
