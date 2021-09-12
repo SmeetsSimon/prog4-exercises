@@ -1,3 +1,8 @@
+def write_rick_and_morty(filename):
+    """Schrijf de tekst "Rick and Morty" naar het tekstbestand met naam filename"""
+    return None
+
+
 def write_numbers(filename):
     """Schrijf de getallen van 0 tot en met 99 in het bestand met naam filename.
 
@@ -10,7 +15,7 @@ def write_numbers(filename):
     ...
     99
     """
-    pass
+    return None
 
 
 def write_numbers_and_squares(filename):
@@ -26,7 +31,7 @@ def write_numbers_and_squares(filename):
     4,16
     ...
     """
-    pass
+    return None
 
 
 def sum_numbers_from_file(filename):
@@ -43,7 +48,7 @@ def sum_numbers_from_file(filename):
     >> v = read_numbers('getallen.txt')
     >> print(v) # toont 128
     """
-    return 100
+    return None
 
 
 def sum_two_columns_of_numbers_from_file(filename):
@@ -62,5 +67,33 @@ def sum_two_columns_of_numbers_from_file(filename):
 
     >> v = sum_two_columns_of_numbers_from_file('getallen.txt')
     >> print(v) # toont (27, 104)
+    """
+    return None
+
+
+def count_words_from_file(filename):
+    """Geef het aantal woorden terug in bestand met naam filename"""
+    return None
+
+
+def count_word_frequency_from_file(filename):
+    """Geef een dictionary terug met per woord het aantal keer dat het woord voorkomt
+
+    Bijvoorbeeld voor een bestand met inhoud:
+    Ik drink veel koffie en veel bruiswater. En veel koffie. En ook koffie.
+
+    {
+        "ik": 1,
+        "en": 3,
+        "koffie": 3,
+        "drink": 1,
+        "veel": 3,
+        ...
+    }
+
+    Tips:
+    - maak alle woorden lowercase
+    - verwijder alle leestekens, zeker ",.?"
+    - verwijder de newlines '\\n' mbv de method strip()
     """
     return None
