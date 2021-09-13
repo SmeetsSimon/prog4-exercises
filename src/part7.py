@@ -1,6 +1,8 @@
 def write_rick_and_morty(filename):
     """Schrijf de tekst "Rick and Morty" naar het tekstbestand met naam filename"""
-    return None
+    bestand = open(filename, "wt")
+    bestand.write("Rick and Morty")
+    return bestand
 
 
 def write_numbers(filename):
@@ -15,7 +17,11 @@ def write_numbers(filename):
     ...
     99
     """
-    return None
+    bestand = open(filename, "wt")
+    for i in range(100):
+        bestand.write(i)
+
+    return bestand
 
 
 def write_numbers_and_squares(filename):
