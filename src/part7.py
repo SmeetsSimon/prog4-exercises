@@ -19,8 +19,7 @@ def write_numbers(filename):
     """
     bestand = open(filename, "wt")
     for i in range(100):
-        bestand.write(i)
-
+        bestand.write(f"{i}\n")
     return bestand
 
 
@@ -37,7 +36,10 @@ def write_numbers_and_squares(filename):
     4,16
     ...
     """
-    return None
+    bestand = open(filename, "wt")
+    for i in range(100):
+        bestand.write(f"{i},{i**2}\n")
+    return bestand
 
 
 def sum_numbers_from_file(filename):
@@ -54,7 +56,9 @@ def sum_numbers_from_file(filename):
     >> v = read_numbers('getallen.txt')
     >> print(v) # toont 128
     """
-    return None
+    bestand = open(filename, "rt")
+    v = bestand.readlines
+    return bestand
 
 
 def sum_two_columns_of_numbers_from_file(filename):
