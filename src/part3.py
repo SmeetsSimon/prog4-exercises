@@ -40,7 +40,7 @@ def phonebook_add(phonebook, name, number):
 
 
 
-    print("not implemented")
+    print(phonebook)
 
 
 def phonebook_remove(phonebook, name, number):
@@ -49,6 +49,7 @@ def phonebook_remove(phonebook, name, number):
     Indien het koppel niet voorkomt, print dan
     "persoon niet gevonden in telefoonboek" op het scherm.
     """
+    
     print("not implemented")
 
 
