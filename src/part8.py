@@ -7,7 +7,7 @@ def raise_exception():
 def raise_exception_on_negative(x):
     """Raise exceptie RuntimeError als negatieve parameter x"""
     def parameter(x):
-        if p  arameter < 0 :
+        if parameter < 0 :
            raise RuntimeError
     pass
 

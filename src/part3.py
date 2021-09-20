@@ -31,17 +31,19 @@ def phonebook_add(phonebook, name, number):
     staat, voeg het dan niet toe, maar toon "ander persoon met deze nummer
     in telefoonboek" op het scherm.
     """
-    phonebook = []
-    for a, b , c in phonebook:
-        phonebook.append(b,c)
     
+    for a, b  in phonebook:
         
+        if a == name:
+            print("data reds in telefoonboek")
+            return
 
+        if b == number:
+            print("andere persoon met deze nummer in telefoonboek")
 
+    phonebook.append([name, number])   
 
-
-    print(phonebook)
-
+    return phonebook
 
 def phonebook_remove(phonebook, name, number):
     """Verwijder het koppel name,number van het telefoonboek.
@@ -49,8 +51,13 @@ def phonebook_remove(phonebook, name, number):
     Indien het koppel niet voorkomt, print dan
     "persoon niet gevonden in telefoonboek" op het scherm.
     """
+    a = phonebook_search(phonebook, name)
+    if a != number:
+        print("persoon niet gevonden in telefoonboek")
+        return
+    return phonebook.remove([name, number])
     
-    print("not implemented")
+    
 
 
 def phonebook_print(phonebook, search_name):
@@ -61,4 +68,10 @@ def phonebook_print(phonebook, search_name):
     phonebook: een list van lists met hierin naam, telefoonnummer paren
     search_name: de naam van de te zoeken persoon
     """
-    print("not implemented")
+    find = False
+    for a, b in phonebook:
+        if a == search_name:
+            print(b)
+            find = True 
+    if find == False:
+        print("niets gevonden")
