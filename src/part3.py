@@ -15,10 +15,10 @@ def phonebook_search(phonebook, search_name):
     phonebook: een list van lists met hierin naam, telefoonnummer paren
     search_name: de naam van de te zoeken persoon
     """
-    for i, j in phonebook:
-        if i == search_name:
-            return j 
-    return None
+    for a, b in phonebook:
+        if a == search_name:
+            return b
+    
 
 
 def phonebook_add(phonebook, name, number):
@@ -35,11 +35,12 @@ def phonebook_add(phonebook, name, number):
     for a, b  in phonebook:
         
         if a == name:
-            print("data reds in telefoonboek")
+            print("data reeds in telefoonboek")
             return
 
         if b == number:
             print("andere persoon met deze nummer in telefoonboek")
+            return
 
     phonebook.append([name, number])   
 
@@ -55,6 +56,7 @@ def phonebook_remove(phonebook, name, number):
     if a != number:
         print("persoon niet gevonden in telefoonboek")
         return
+        
     return phonebook.remove([name, number])
     
     

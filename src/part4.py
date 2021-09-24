@@ -10,6 +10,11 @@ def addressbook_search(addressbook, search_name):
     addressbook: een list van lists met hierin naam, adres paren
     search_name: de naam van de te zoeken persoon
     """
+    for i in addressbook:
+        if i["name"] == search_name:
+            result = i["address"]
+            return result
+
     return None
 
 
@@ -20,4 +25,12 @@ def addressbook_add(addressbook, name, address):
     voeg het dan niet toe, maar toon "persoon reeds in adresboek"
     op het scherm.
     """
+    result1 = addressbook_search(addressbook, name)
+    if result1 == address:
+        print(f"persoon reeds in adresboek")
+        return
+
+    dicte = {"name": name, "address": address}
+    addressbook.append(dicte)
+    return address
     
