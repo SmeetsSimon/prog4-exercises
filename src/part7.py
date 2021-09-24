@@ -57,8 +57,16 @@ def sum_numbers_from_file(filename):
     >> print(v) # toont 128
     """
     bestand = open(filename, "rt")
-    v = bestand.readlines
-    return bestand
+    v = bestand.readlines()
+    som = 0
+    for i in v:
+        try:
+            i = int(i)
+        except ValueError:
+            continue
+        som+= int(i)
+    bestand.close()
+    return som
 
 
 def sum_two_columns_of_numbers_from_file(filename):
@@ -78,7 +86,21 @@ def sum_two_columns_of_numbers_from_file(filename):
     >> v = sum_two_columns_of_numbers_from_file('getallen.txt')
     >> print(v) # toont (27, 104)
     """
-    return None
+    bestand = open(filename, "rt")
+    v = bestand.readlines()
+    som1 = 0
+    som2 = 0
+    for i in v:
+        a, b = i.split(",")
+        try:
+            a = int(a)
+            b = int(b)
+        except ValueError:
+            continue
+        som1 += a 
+        som2 += b
+    bestand.close()
+    return som1, som2
 
 
 def count_words_from_file(filename):
