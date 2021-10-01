@@ -1,6 +1,10 @@
 def find_problematic_scores(scores):
     """Geef het aantal punten minder dan 5 terug."""
-    return 0
+    count = 0
+    for i in scores:
+        if i < 5:
+            count += 1
+    return count
 
 
 def count_ice_cream_flavors(ice_creams):
