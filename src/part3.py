@@ -17,7 +17,7 @@ def phonebook_search(phonebook, search_name):
     """
     for a, b in phonebook:
         if a == search_name:
-            return b
+            return b 
     
 
 
@@ -32,17 +32,17 @@ def phonebook_add(phonebook, name, number):
     in telefoonboek" op het scherm.
     """
     
-    for a, b  in phonebook:
-        
-        if a == name:
+    for i, j in phonebook:
+        naam = i
+        nummer = j
+        if naam == name:
             print("data reeds in telefoonboek")
             return
-
-        if b == number:
-            print("andere persoon met deze nummer in telefoonboek")
+        if nummer == number:
+            print("ander persoon met deze nummer in telefoonboek")
             return
 
-    phonebook.append([name, number])   
+    phonebook = phonebook.append([name, number])
 
     return phonebook
 
