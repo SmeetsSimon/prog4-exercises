@@ -14,7 +14,7 @@ def tel_autos(lijst_autos):
 
     Bijvoorbeeld:
     >>> tel_autos(["bmw", "audi", "audi", "ford", "bmw"])
-    {'peugeot': 0, 'ford': 1, 'wmb': 2, 'audi': 2 'nissan': 0}
+    {'peugeot': 0, 'ford': 1, 'bmw': 2, 'audi': 2, 'nissan': 0}
     """
 
 
