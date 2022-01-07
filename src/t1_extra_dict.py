@@ -30,9 +30,9 @@ def leeftijden_acteurs(acteurs):
 
 def lengtes_acteurs(acteurs):
     """Gegeven een lijst van dictionaries met informatie over acteurs,
-    geef je een lijst van gewichten van acteurs terug.
+    geef je een lijst van lengtes van acteurs terug.
 
     Bijvoorbeeld:
-    >>> lengtes_acteurs([["Will Smith", 53], ["Tom Hanks", 65]])
-    [53, 65]
+    >>> lengtes_acteurs([{"naam": "Jennifer Lawrence", "leeftijd": 31, "lengte": 175}])
+    [175]
     """
