@@ -130,6 +130,10 @@ def gemiddelde_diesize_videokaarten(lijst_videokaarten):
     400
     """
     import statistics
+    lijst = []
+    for videokaart in lijst_videokaarten:
+        lijst.append(videokaart["diesize"])
+    return statistics.mean(lijst)
     
 
 
@@ -141,6 +145,10 @@ def jaren_videokaarten(lijst_videokaarten):
     >>> videokaarten_voor_jaar([{"jaar": 2020, "diesize": 500}, {"jaar": 2021, "diesize": 300}], 2020)
     [2020, 2020]
     """
+    lijst = []
+    for videokaart in lijst_videokaarten:
+        lijst.append(videokaart["jaar"])
+    return lijst
 
 
 def videokaarten_voor_jaar(lijst_videokaarten, jaar):
@@ -152,3 +160,9 @@ def videokaarten_voor_jaar(lijst_videokaarten, jaar):
     >>> videokaarten_voor_jaar([{"jaar": 2020, "diesize": 500}, {"jaar": 2021, "diesize": 300}], 2020)
     [{"jaar": 2020, "diesize": 500}]
     """
+    lijst = []
+    for videokaart in lijst_videokaarten:
+        if videokaart["jaar"] == jaar:
+            lijst.append(videokaart)
+    return lijst    
+ 
