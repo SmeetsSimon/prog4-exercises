@@ -58,6 +58,10 @@ class Board:
 
     def out_of_bottom_border(self, shape, player_y):
         """Controlleer dat de vorm shape op positie player_y niet onder het bord ligt"""
+        if (player_y + len(shape)) <= self.height:
+            return False
+        else:
+            return True
         
 
     def out_of_border(self, shape, player_x, player_y):
@@ -68,6 +72,21 @@ class Board:
 
         Geef True terug als de shape buiten het bord ligt, anders False.
         """
+        left = self.out_of_left_border(player_x)
+        top = self.out_of_top_border(player_y)
+        right = self.out_of_right_border(shape, player_x)
+        bottom = self.out_of_bottom_border(shape, player_y)
+
+        if left == True:
+            return True
+        if top == True:
+            return True
+        if right == True:
+            return True
+        if bottom == True:
+            return True
+        
+        return False
 
     def check_collision(self, shape, player_x, player_y):
         """Controlleer of de vorm 'shape' op positie player_x, player_y overlapt met bestaande blokken.
