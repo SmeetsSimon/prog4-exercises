@@ -1,12 +1,14 @@
 import random
 
 
-def map_to_pixel(x, y, tile_size=22):
+def map_to_pixel(x, y, tile_size=22): 
     """Converteer map posities naar pixel posities
 
     Deze functie vergemakkelijkt het tekenen van het bord.
     """
+    result = (x * tile_size, y * tile_size)
 
+    return result
 
 class Board:
     def __init__(self, width, height):
@@ -19,24 +21,44 @@ class Board:
         Een leeg vakje op het bord wordt voorgesteld door -1. Daarom wordt bij het
         aanmaken van de datastructuur ieder element op -1 gezet.
         """
+        self.width = width
+        self.height = height
+        self.data = []
+        for i in range(self.height):
+            self.data.append([-1] * self.width)
+        
 
     def out_of_left_border(self, player_x):
         """Controlleer dat positie player_x niet links van het bord ligt
 
         Geef True terug als player_x links van het bord ligt, anders False.
         """
+        if player_x < 0:
+            return True
+        else: 
+            return False
 
     def out_of_top_border(self, player_y):
         """Controlleer dat positie player_y niet boven het bord ligt
 
         Geef True terug als player_y boven van het bord ligt, anders False.
         """
+        if player_y < 0:
+            return True
+        else: 
+            return False
 
     def out_of_right_border(self, shape, player_x):
         """Controlleer dat de vorm shape op positie player_x niet rechtsbuiten het bord ligt"""
+        if (player_x + len(shape[0])) < self.width:
+            return False
+        else:
+            return True
+
 
     def out_of_bottom_border(self, shape, player_y):
         """Controlleer dat de vorm shape op positie player_y niet onder het bord ligt"""
+        
 
     def out_of_border(self, shape, player_x, player_y):
         """Controlleer dat de vorm shape op positie player_x, player_y niet buiten het bord ligt
