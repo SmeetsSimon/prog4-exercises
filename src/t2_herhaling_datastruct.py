@@ -1,3 +1,5 @@
+from collections import defaultdict
+
 def maak_videokaart_dict(merk, naam, architectuur, geheugen, busbreedte, diesize, jaar):
     """Geef een dictionary terug met alle gegevens die als parameters aan
     de functie meegegeven werden.
@@ -160,6 +162,11 @@ def videokaarten_voor_jaar(lijst_videokaarten, jaar):
     >>> videokaarten_voor_jaar([{"jaar": 2020, "diesize": 500}, {"jaar": 2021, "diesize": 300}], 2020)
     [{'jaar': 2020, 'diesize': 500}]
     """
+    lijst = []
+    for videokaart in lijst_videokaarten:
+        if videokaart["jaar"] == jaar:
+            lijst.append(videokaart)
+    return lijst
 
 
 def grootste_geheugen_per_jaar(lijst_videokaarten):
@@ -170,9 +177,9 @@ def grootste_geheugen_per_jaar(lijst_videokaarten):
     >>> grootste_geheugen_per_jaar([{"jaar": 2020, "geheugen": 4}, {"jaar": 2021, "geheugen": 8}])
     {2020: 4, 2021: 8}
     """
-    lijst = []
+    dict = defaultdict(int)
     for videokaart in lijst_videokaarten:
-        if videokaart["jaar"] == jaar:
-            lijst.append(videokaart)
-    return lijst    
+        if dict[videokaart["jaar"]] < videokaart["geheugen"]:
+            dict[videokaart["jaar"]] = videokaart["geheugen"]
+    return dict    
  

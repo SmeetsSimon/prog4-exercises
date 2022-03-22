@@ -1,4 +1,4 @@
-from collections import defaultdict
+
 
 def maak_persoonsinformatie_dict(naam, leeftijd, gewicht, lengte, oogkleur):
     """Geef een dictionary terug met alle gegevens die als parameters aan
